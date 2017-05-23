@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<navigation>
+    <user>
+        <menu>
+            <title>Home</title>
+            <link>home.php</link>
+        </menu>
+        <menu>
+            <title>Products</title>
+            <link>products.php</link>
+        </menu>
+        <menu>
+            <title>Shopping cart</title>
+            <link>shoppingCart.php</link>
+        </menu>
+        <menu>
+            <title>Register</title>
+            <link>register.php</link>
+        </menu>
+        <menu>
+            <title>Login</title>
+            <link>login.php</link>
+        </menu>
+    </user>
+    <loggedUser>
+        <menu>
+            <title>Home</title>
+            <link>home.php</link>
+        </menu>
+        <menu>
+            <title>Products</title>
+            <link>products.php</link>
+        </menu>
+        <menu>
+            <title>Shopping cart</title>
+            <link>shoppingCart.php</link>
+        </menu>
+        <menu>
+            <title>My Account</title>
+            <link>account.php</link>
+        </menu>
+    </loggedUser>
+    <admin>
+        <menu>
+            <title>Home</title>
+            <link>home.php</link>
+        </menu>
+        <menu>
+            <title>Manage products</title>
+            <link>manageProducts.php</link>
+        </menu>
+        <menu>
+            <title>Manage coupons</title>
+            <link>manageCoupons.php</link>
+        </menu>
+        <menu>
+            <title>Manage customers</title>
+            <link>manageCustomers.php</link>
+        </menu>
+    </admin>
+</navigation>
