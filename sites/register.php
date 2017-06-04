@@ -235,3 +235,43 @@ if (isset($_GET['submit'])) {
     </div>
 </form>
 
+
+
+
+
+
+<div class="modal fade" id="details-1" tabindex="-1" role="dialog"
+     aria-labelledby="details-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title text-center">Tomato</h4>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="center-block">
+                                <img src="res/img/tomato.jpg" alt="Tomato" class="details img-responsive"/>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <h4>Details</h4>
+                            <p>hello world</p>
+                            <hr>
+                            <p>Price: 34.99</p>
+                            <p>Brand: levis</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-default" data-dismiss="modal">Close</button>
+                <button class="btn btn-warning" type="submit"><span class="glyphicon glyphicon-shopping-cart"></span>Add To Cart</button>
+            </div>
+        </div>
+    </div>
+</div>
