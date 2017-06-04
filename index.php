@@ -13,5 +13,9 @@ and open the template in the editor.
         <?php
             echo "asdf";
         ?>
+
+        <?php
+            echo "GITHUB TEST MAXX"
+        ?>
     </body>
 </html>
