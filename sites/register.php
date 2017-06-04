@@ -100,7 +100,7 @@ if (isset($_GET['submit'])) {
               integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     </head>
     <body>
-        <form action='Register.php' method="post">
+        <form method="GET">
             <div class="form-group">
                 <label>Gender</label>
                 <select name="gender" class="form-control" required >
