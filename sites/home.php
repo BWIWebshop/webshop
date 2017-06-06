@@ -1,8 +1,24 @@
+<!DOCTYPE html>
+
 <?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+include '../utility/DB.class';
+include '../model/Produkt.class';
+$db = new DB();
+include '../inc/head.php';
+include '../inc/navigation.php';
+include '../inc/headerfull.php';
+//include '../inc/leftsidebar.php';
+$productObjects = $db->getFeaturedProductsList();
+?>
 
+<div class="container">
+    <div class="col-md-12">
+        <div class="row">
+            <h2 class="text-center">Featured Products</h2>
+            <?php include '../inc/maincontent.php'; ?>
+
+        </div>
+
+
+        <?php include '../inc/footer.php'; ?>

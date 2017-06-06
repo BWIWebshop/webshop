@@ -1,4 +1,7 @@
-
+<?php
+include '../inc/head.php';
+include '../inc/navigation.php';
+?>
 <div class="container">
 
     <form class="form-signin">

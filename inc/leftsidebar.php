@@ -1,1 +1,1 @@
-<div class="col-md-2">left side bar</div>
+<div class="col-md-2"></div>

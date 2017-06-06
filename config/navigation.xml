@@ -1,62 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <navigation>
-    <user>
+    <visitor>
         <menu>
-            <title>Home</title>
-            <link>home.php</link>
+            <title>Fruits</title>
+            <link>fruits.php</link>
         </menu>
         <menu>
-            <title>Products</title>
-            <link>products.php</link>
+            <title>Vegetables</title>
+            <link>vegetables.php</link>
         </menu>
         <menu>
-            <title>Shopping cart</title>
-            <link>shoppingCart.php</link>
+            <title>Kitchen Accessories</title>
+            <link>accessories.php</link>
         </menu>
         <menu>
+            <title>Veggie Costumes</title>
+            <link>costumes.php</link>
+        </menu>
+        <menuright>
             <title>Register</title>
             <link>register.php</link>
-        </menu>
-        <menu>
+        </menuright>
+        <menuright>
             <title>Login</title>
             <link>login.php</link>
-        </menu>
-    </user>
-    <loggedUser>
+        </menuright>
+    </visitor>
+    <user>
         <menu>
-            <title>Home</title>
-            <link>home.php</link>
-        </menu>
-        <menu>
-            <title>Products</title>
-            <link>products.php</link>
+            <title>Fruits</title>
+            <link>fruits.php</link>
         </menu>
         <menu>
-            <title>Shopping cart</title>
-            <link>shoppingCart.php</link>
+            <title>Vegetables</title>
+            <link>vegetables.php</link>
         </menu>
         <menu>
+            <title>Kitchen Accessories</title>
+            <link>accessories.php</link>
+        </menu>
+        <menu>
+            <title>Veggie Costumes</title>
+            <link>costumes.php</link>
+        </menu>
+        <menuright>
             <title>My Account</title>
-            <link>account.php</link>
-        </menu>
-    </loggedUser>
-    <admin>
-        <menu>
-            <title>Home</title>
-            <link>home.php</link>
-        </menu>
-        <menu>
-            <title>Manage products</title>
-            <link>manageProducts.php</link>
-        </menu>
-        <menu>
-            <title>Manage coupons</title>
-            <link>manageCoupons.php</link>
-        </menu>
-        <menu>
-            <title>Manage customers</title>
-            <link>manageCustomers.php</link>
-        </menu>
-    </admin>
+            <link>myAccount.php</link>
+        </menuright>
+        <menuright>
+            <title>Logout</title>
+            <link>Logout.php</link>
+        </menuright>
+    </user>
 </navigation>
