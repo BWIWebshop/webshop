@@ -1,7 +1,7 @@
 <?php
 
-include '../utility/DB.class';
-include '../model/Produkt.class';
+include '../utility/DB.php';
+include '../model/Produkt.php';
 $db = new DB();
 $productObjects = $db->getProductList(4);
 include '../inc/head.php';

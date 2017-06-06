@@ -2,8 +2,8 @@
 
 <?php
 
-include '../utility/DB.class';
-include '../model/Produkt.class';
+include '../utility/DB.php';
+include '../model/Produkt.php';
 $db = new DB();
 include '../inc/head.php';
 include '../inc/navigation.php';
