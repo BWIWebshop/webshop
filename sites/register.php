@@ -50,7 +50,13 @@ if (isset($_POST['submit'])) {
     $userObject = new User($gender, $name, $surname, $email, $address, $zip, $city, $username, $password, $payment);
 
     $db->registerUser($userObject);
+
     echo "success";
+    //redirect to homepage after successful registration
+    echo ("<script language='JavaScript'>
+           window.alert('Succesfully registered!')
+           window.location.href='home.php';
+           </script>");
 } else {
     ?>
 
