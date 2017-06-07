@@ -112,4 +112,5 @@ class DB {
         $this->dbobjekt->query($query);
     }
 
+    
 }

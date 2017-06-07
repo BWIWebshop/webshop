@@ -4,7 +4,6 @@
 
 include '../utility/DB.php';
 include '../model/Produkt.php';
-$db = new DB();
 include '../inc/head.php';
 include '../inc/navigation.php';
 include '../inc/headerfull.php';
