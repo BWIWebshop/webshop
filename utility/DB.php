@@ -1,24 +1,18 @@
 <?php
 
-
-class DB
-{
-
-    //put your code here
-
+class DB {
+    
     private $host = "localhost";
     private $user = "root";
-    private $pwd = "MtWBUGZKZL1Np8bk";
-    private $dbname = "wet2";
+    private $pwd = "12345";
+    private $dbname = "webshop";
     private $dbobjekt = null;
 
-    function connectToDB()
-    {
+    function connectToDB() {
         $this->dbobjekt = new mysqli($this->host, $this->user, $this->pwd, $this->dbname);
     }
 
-    function getUserList()
-    {
+    function getUserList() {
         $this->connectToDB();
         $usersArray = array();
         $query = "SELECT * FROM users";
@@ -34,8 +28,7 @@ class DB
         return $usersArray;
     }
 
-    function getFeaturedProductsList()
-    {
+    function getFeaturedProductsList() {
         $this->connectToDB();
         $productArray = array();
         $query = "SELECT * FROM products WHERE Featured = 1";
@@ -51,8 +44,7 @@ class DB
         return $productArray;
     }
 
-    function getProductList($category)
-    {
+    function getProductList($category) {
         $this->connectToDB();
         $productArray = array();
         $query = "SELECT * FROM products WHERE Categoryid = $category";
@@ -68,57 +60,56 @@ class DB
         return $productArray;
     }
 
-
-    function registerUser($userObjekt)
-    {
+    function registerUser($userObjekt) {
         $this->connectToDB();
-        $query = "INSERT INTO 'users' ('ID', "
-            . "'Vorname', "
-            . "'Nachname', "
-            . "'Username', "
-            . "'Email', "
-            . "'Adresse', "
-            . "'PLZ', "
-            . "'Ort', "
-            . "'Passwort', "
-            . "'Anrede') VALUES (NULL, "
-            . "'" . $userObjekt->getVorname() . "', "
-            . "'" . $userObjekt->getNachname() . "', "
-            . "'" . $userObjekt->getUsername() . "', "
-            . "'" . $userObjekt->getEmail() . "', "
-            . "'" . $userObjekt->getAdresse() . "', "
-            . "'" . $userObjekt->getPLZ() . "', "
-            . "'" . $userObjekt->getOrt() . "', "
-            . "'" . $userObjekt->getPwd() . "', "
-            . "'" . $userObjekt->getAnrede() . "');";
+        
+        $query=  "INSERT INTO address (address, zip, city) "
+                . "VALUES ('". $userObjekt->getAddress() ."',".$userObjekt->getZip().",'".$userObjekt->getCity()."')";
+           
+        $this->dbobjekt->query($query);
+        
+        $a_id = $this->dbobjekt->insert_id;
+        
+        $query = "INSERT INTO person (a_id, anrede, vorname, nachname, email, payment) "
+                ."VALUES ('". $a_id ."','". $userObjekt->getGender() ."','". $userObjekt->getName() ."','". $userObjekt->getSurname() ."','". $userObjekt->getEmail() ."','". $userObjekt->getPayment() ."')";
 
-        $ergebnis = $this->dbobjekt->query($query);
+        $this->dbobjekt->query($query);
+
+        $p_id = $this->dbobjekt->insert_id;
+        
+        $hashPw = md5($userObjekt->getPassword());
+        $query = "INSERT INTO user ("
+                . "p_id, "
+                . "username, "
+                . "password, "
+                . "category) VALUES ("
+                . "'".$p_id."', "
+                . "'".$userObjekt->getUsername()."', "
+                . "'".$hashPw."', "
+                . "1)";
+
+        $this->dbobjekt->query($query);
     }
 
-    function deleteUser($userId)
-    {
+    function deleteUser($userId) {
         $this->connectToDB();
         $query = "DELETE FROM users where id = $userId";
-        $ergebnis = $this->dbobjekt->query($query);
+        $this->dbobjekt->query($query);
     }
 
-    function updateUser($userObjekt)
-    {
+    function updateUser($userObjekt) {
         $this->connectToDB();
         $query = "UPDATE 'users' SET 'Vorname' = '" . $userObjekt->getVorname() . "', "
-            . "`Nachname` = '" . $userObjekt->getNachname() . "', "
-            . "`Username` = '" . $userObjekt->getUsername() . "', "
-            . "`Email` = '" . $userObjekt->getEmail() . "', "
-            . "`Adresse` = '" . $userObjekt->getAdresse() . "', "
-            . "`PLZ` = '" . $userObjekt->getPLZ() . "', "
-            . "`Ort` = '" . $userObjekt->getOrt() . "', "
-            . "`Passwort` = '" . $userObjekt->getPwd() . "', "
-            . "`Anrede` = '" . $userObjekt->getAnrede() . "' "
-            . "WHERE `user`.`ID` = " . $userObjekt->getId();
-        $ergebnis = $this->dbobjekt->query($query);
-
+                . "`Nachname` = '" . $userObjekt->getNachname() . "', "
+                . "`Username` = '" . $userObjekt->getUsername() . "', "
+                . "`Email` = '" . $userObjekt->getEmail() . "', "
+                . "`Adresse` = '" . $userObjekt->getAdresse() . "', "
+                . "`PLZ` = '" . $userObjekt->getPLZ() . "', "
+                . "`Ort` = '" . $userObjekt->getOrt() . "', "
+                . "`Passwort` = '" . $userObjekt->getPwd() . "', "
+                . "`Anrede` = '" . $userObjekt->getAnrede() . "' "
+                . "WHERE `user`.`ID` = " . $userObjekt->getId();
+        $this->dbobjekt->query($query);
     }
 
 }
-
-
